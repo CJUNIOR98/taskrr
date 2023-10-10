@@ -1,0 +1,3 @@
+-- CREATE DATABASE IF NOT EXIST cjdb
+SELECT 'CREATE DATABASE cjdb'
+WHERE NOT EXIST (SELECT FROM pg_database WHERE datname = 'cjdb')\gexec
