@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  cj_pg:
+    image: postgres:15.1
+    container_name: cj_pg
+    restart: always
+    environment:
+      POSTGRES_DB: cjdb
+      POSTGRES_USER: junior
+      POSTGRES_PASSWORD: pass1234
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 5433:5432
